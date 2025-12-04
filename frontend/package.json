@@ -1,0 +1,70 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@chakra-ui/react": "^2.7.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^5.0.3",
+    "@googlemaps/js-api-loader": "^1.15.2",
+    "@react-oauth/google": "^0.11.0",
+    "date-fns": "^2.30.0",
+    "deck.gl": "^8.7.10",
+    "formik": "^2.4.1",
+    "framer-motion": "^10.12.16",
+    "generate-react-cli": "^7.1.1",
+    "jwt-decode": "^3.1.2",
+    "modern-normalize": "^2.0.0",
+    "react": "^18.1.0",
+    "react-aria": "^3.29.1",
+    "react-dom": "^18.1.0",
+    "react-grid-system": "^8.1.4",
+    "react-icons": "^4.9.0",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
+    "react-slick": "^0.29.0",
+    "react-transition-group": "^4.4.2",
+    "slick-carousel": "^1.8.1",
+    "yup": "^1.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test  --transformIgnorePatterns '[\"/node_modules/\", \"\\.pnp\\.[^\\/]+$\"]' --testTimeout '60000'",
+    "eject": "react-scripts eject",
+    "lint": "eslint --fix .",
+    "lint:check": "eslint  .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/google.maps": "^3.53.6",
+    "jest-google-maps-mock": "^1.0.7",
+    "msw": "^1.2.3",
+    "prettier": "^2.8.8"
+  },
+  "engines": {
+    "node": "^16"
+  }
+}
