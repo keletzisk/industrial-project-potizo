@@ -1,0 +1,34 @@
+{
+  "name": "ccs6430-23-mot",
+  "version": "1.0.0",
+  "description": "## Website links",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "npx playwright test",
+    "dev": "concurrently 'npm run frontend' 'npm run backend'",
+    "frontend": "cd frontend/ && npm start",
+    "backend": "cd backend/ && npm run dev",
+    "cucumber": "npx cucumber-js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/city-cs-msc/ccs6430-23-mot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/city-cs-msc/ccs6430-23-mot/issues"
+  },
+  "homepage": "https://github.com/city-cs-msc/ccs6430-23-mot#readme",
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.4.0",
+    "@playwright/test": "^1.36.2",
+    "@types/cucumber": "^7.0.0",
+    "concurrently": "^8.2.2",
+    "ts-node": "^10.9.1"
+  }
+}

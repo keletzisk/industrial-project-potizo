@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "es6",
+    "moduleResolution": "nodenext",
+  },
+  "include": [
+    "./e2e/**/*",
+    "./features/**/*"
+  ],
+  "exclude": [
+    "./frontend/**/*",
+    "./backend/**/*",
+  ]
+}
