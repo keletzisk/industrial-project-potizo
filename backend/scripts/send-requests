@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Example call with 
+# ./send_requests.sh https://potizo-staging.whvecyjdau.paas4.infalia.com/api/users/login 0.2 POST '{"Authorization": "Bearer TOKEN"}'
+
+URL="$1"
+delay="$2"
+request_type="$3"
+headers="$4"
+payload="$5"
+counter=1
+
+if [ -z "$URL" ] || [ -z "$delay" ] || [ -z "$request_type" ]; then
+  echo "Usage: ./send_requests.sh <URL> <delay> <request_type> [<headers>] [<payload>]"
+  exit 1
+fi
+
+while true; do
+  # Make the request and capture the response code, time, and body
+  if [ -z "$headers" ]; then
+    if [ -z "$payload" ]; then
+      response=$(curl -s -o /dev/null -w "HTTP_CODE:%{http_code} TIME_TOTAL:%{time_total}\n" -X "$request_type" -D - "$URL" 2>&1)
+    else
+      response=$(curl -s -o /dev/null -w "HTTP_CODE:%{http_code} TIME_TOTAL:%{time_total}\n" -X "$request_type" -d "$payload" -D - "$URL" 2>&1)
+    fi
+  else
+    if [ -z "$payload" ]; then
+      response=$(curl -s -o /dev/null -w "HTTP_CODE:%{http_code} TIME_TOTAL:%{time_total}\n" -X "$request_type" -H "$headers" -D - "$URL" 2>&1)
+    else
+      response=$(curl -s -o /dev/null -w "HTTP_CODE:%{http_code} TIME_TOTAL:%{time_total}\n" -X "$request_type" -H "$headers" -d "$payload" -D - "$URL" 2>&1)
+    fi
+  fi
+
+  response_code=$(echo "$response" | grep -oP 'HTTP_CODE:\K\d+')
+  response_time=$(echo "$response" | grep -oP 'TIME_TOTAL:\K[^ ]+')
+
+  # Print the request number, response code, time, and body
+  echo "Request $counter"
+  echo "Response Code: $response_code"
+  echo "Response Time: $response_time seconds"
+
+  counter=$((counter+1))  # Increment the request counter
+
+  sleep "$delay"  # Wait for the specified delay between requests
+done

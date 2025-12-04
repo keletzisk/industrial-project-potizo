@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "eu.citycollege.york.adoptatree.twa",
+                     "sha256_cert_fingerprints": ["B3:86:D4:C7:FC:1B:FB:7E:D8:E1:FB:50:F8:0B:0B:87:ED:C7:4E:9A:5A:FF:5C:EB:B1:6D:91:6E:C0:FD:CD:8C"] }
+      }
+]
