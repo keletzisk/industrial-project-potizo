@@ -1,0 +1,41 @@
+:root {
+  /* Color palette */
+  --background-nav-green: #3bce8e;
+  --darker-military-green: #406450;
+  --pale-yellow-trans: rgba(255, 255, 240, 0.8);
+  --background-light: #f3d068;
+  --darker-orange: #da703f;
+  --background-brown: #a9694c;
+  --background-sky-blue: #c2e3ee;
+
+  --font-color-dark-gray: #323539;
+
+  /* Color palette alternatives */
+  --background-nav-green-alternative: #29a36e;
+  --darker-military-green-alternative: #304b3c;
+  --background-light-alternative: #f6dc8e;
+  --darker-orange-alternative: #de8e68;
+  --background-brown-alternative: #b97f64;
+}
+
+body {
+  min-width: 320px;
+}
+
+/* React slick slider overrides */
+.slick-dots li button:before {
+  font-size: 0.8rem !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black !important;
+}
+
+.slick-next {
+  right: -21px !important;
+}
+
+.slick-prev {
+  left: -21px !important;
+}
